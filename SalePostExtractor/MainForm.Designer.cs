@@ -31,9 +31,9 @@
             this.browser = new System.Windows.Forms.WebBrowser();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnViewSource = new System.Windows.Forms.Button();
             this.btnNavigate = new System.Windows.Forms.Button();
             this.txtUrl = new System.Windows.Forms.TextBox();
+            this.btnViewSource = new System.Windows.Forms.Button();
             this.rtbSource = new System.Windows.Forms.RichTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -46,7 +46,7 @@
             this.browser.Location = new System.Drawing.Point(0, 0);
             this.browser.MinimumSize = new System.Drawing.Size(20, 20);
             this.browser.Name = "browser";
-            this.browser.Size = new System.Drawing.Size(865, 414);
+            this.browser.Size = new System.Drawing.Size(665, 414);
             this.browser.TabIndex = 0;
             this.browser.Url = new System.Uri("https://www.facebook.com/groups/baguiobuyandsell/forsaleposts", System.UriKind.Absolute);
             this.browser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.browser_Navigated);
@@ -64,14 +64,34 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnNavigate);
             this.panel1.Controls.Add(this.txtUrl);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 414);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(865, 49);
             this.panel1.TabIndex = 2;
+            // 
+            // btnNavigate
+            // 
+            this.btnNavigate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNavigate.Location = new System.Drawing.Point(778, 14);
+            this.btnNavigate.Name = "btnNavigate";
+            this.btnNavigate.Size = new System.Drawing.Size(75, 23);
+            this.btnNavigate.TabIndex = 3;
+            this.btnNavigate.Text = "Go";
+            this.btnNavigate.UseVisualStyleBackColor = true;
+            this.btnNavigate.Click += new System.EventHandler(this.btnNavigate_Click);
+            // 
+            // txtUrl
+            // 
+            this.txtUrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUrl.Location = new System.Drawing.Point(100, 16);
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.Size = new System.Drawing.Size(672, 20);
+            this.txtUrl.TabIndex = 2;
             // 
             // btnViewSource
             // 
@@ -84,39 +104,19 @@
             this.btnViewSource.UseVisualStyleBackColor = true;
             this.btnViewSource.Click += new System.EventHandler(this.btnViewSource_Click);
             // 
-            // btnNavigate
-            // 
-            this.btnNavigate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNavigate.Location = new System.Drawing.Point(778, 11);
-            this.btnNavigate.Name = "btnNavigate";
-            this.btnNavigate.Size = new System.Drawing.Size(75, 23);
-            this.btnNavigate.TabIndex = 3;
-            this.btnNavigate.Text = "Go";
-            this.btnNavigate.UseVisualStyleBackColor = true;
-            this.btnNavigate.Click += new System.EventHandler(this.btnNavigate_Click);
-            // 
-            // textBox1
-            // 
-            this.txtUrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUrl.Location = new System.Drawing.Point(100, 14);
-            this.txtUrl.Name = "textBox1";
-            this.txtUrl.Size = new System.Drawing.Size(672, 20);
-            this.txtUrl.TabIndex = 2;
-            // 
             // rtbSource
             // 
             this.rtbSource.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbSource.Location = new System.Drawing.Point(0, 0);
             this.rtbSource.Name = "rtbSource";
-            this.rtbSource.Size = new System.Drawing.Size(200, 414);
+            this.rtbSource.Size = new System.Drawing.Size(200, 391);
             this.rtbSource.TabIndex = 3;
             this.rtbSource.Text = "";
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnViewSource);
             this.panel2.Controls.Add(this.rtbSource);
+            this.panel2.Controls.Add(this.btnViewSource);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(665, 0);
             this.panel2.Name = "panel2";
@@ -128,8 +128,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(865, 463);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.browser);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
             this.Text = "Facebook Extractor";
